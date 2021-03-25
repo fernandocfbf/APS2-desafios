@@ -152,7 +152,7 @@ void fft_inverse_2d(double complex matrix[MAX_SIZE][MAX_SIZE], int width, int he
         devolve_linha(matrix, width, vector_linha, l);
 
         // t = transformada de Fourier matrix[l]
-        fft_inverse(t_linha, vector_linha, width);
+        fft_inverse(vector_linha, t_linha, width);
 
         //para cada coluna da matrix_t, a coluna recebe o mesmo valor de t
         for (int coluna = 0; coluna < width; coluna++){
@@ -171,7 +171,7 @@ void fft_inverse_2d(double complex matrix[MAX_SIZE][MAX_SIZE], int width, int he
         devolve_coluna(matrix, height, vector_coluna, c);
 
         // t = transformada de Fourier matrix[c]
-        fft_inverse(t_coluna, vector_coluna, height);
+        fft_inverse(vector_coluna, t_coluna, height);
 
         //para cada linha da matrix_t, a linha recebe o mesmo valor de t
         for (int linha = 0; linha < height; linha++){
